@@ -14,6 +14,12 @@ git clone https://github.com/foreseecode/foresee-sdk-cordova-samples
 cd SampleApp
 ```
 
+## Add the ForeSee Cordova plugin 
+
+```
+cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
+```
+
 ## iOS
 
 1. Add iOS platform: `cordova platform add ios`
