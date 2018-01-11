@@ -44,3 +44,6 @@ cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.o
 cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
 ```
 
+## License 
+Apache License, Version 2.0 
+https://www.apache.org/licenses/LICENSE-2.0
