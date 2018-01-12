@@ -14,12 +14,6 @@ git clone https://github.com/foreseecode/foresee-sdk-cordova-samples
 cd SampleApp
 ```
 
-## Add the ForeSee Cordova plugin 
-
-```
-cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
-```
-
 ## iOS
 
 1. Add iOS platform: `cordova platform add ios`
@@ -32,7 +26,7 @@ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
 8. Build iOS: `cordova build ios`
 9. Run iOS: `cordova run ios`
 
-##Android
+## Android
 
 1. Add Android platform: `cordova platform add android`
 2. Run `cordova prepare`
@@ -53,3 +47,10 @@ cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
 ## License 
 Apache License, Version 2.0 
 https://www.apache.org/licenses/LICENSE-2.0
+
+## iOS Quirks
+iOS minimum SDK version will be fixed according to the official Cordova account (https://issues.apache.org/jira/browse/CB-13597)
+
+## Android Quirks
+Android minimum SDK version  will be fixed according to the official Cordova Blog (http://disq.us/p/1oqjjtg)
+
