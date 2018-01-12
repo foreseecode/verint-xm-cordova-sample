@@ -49,8 +49,7 @@ Apache License, Version 2.0
 https://www.apache.org/licenses/LICENSE-2.0
 
 ## iOS Quirks
-iOS minimum SDK version will be fixed according to the official Cordova account (https://issues.apache.org/jira/browse/CB-13597)
+iOS minimum SDK version will be fixed according to the official Cordova account (https://issues.apache.org/jira/browse/CB-13597).
 
 ## Android Quirks
-Android minimum SDK version  will be fixed according to the official Cordova Blog (http://disq.us/p/1oqjjtg)
-
+Android minimum SDK version will be fixed according to the official Cordova Blog (http://disq.us/p/1oqjjtg).
