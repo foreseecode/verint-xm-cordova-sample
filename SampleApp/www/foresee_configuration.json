@@ -1,0 +1,15 @@
+{
+	"clientId":"FSRTESTINGCODECID12345==",
+	"measures":
+	[
+		{
+			"surveyId":"android_app_QA",
+			"daysSinceLaunch":0,
+			"launchCount":0,
+			"significantEventThresholds":
+	        {
+	          "instant_survey": 1
+	        }
+		}
+  ]
+}
