@@ -17,7 +17,7 @@ cd SampleApp
 ## iOS
 
 1. Add iOS platform: `cordova platform add ios`
-2. Open platforms/iOS/Podfile
+2. Open platforms/ios/Podfile
 3. Fix iOS minimum version (modify line to  platform :ios, '9.0')
 4. Change directory: `cd platforms/ios`
 5. Update pods: `pod install`
