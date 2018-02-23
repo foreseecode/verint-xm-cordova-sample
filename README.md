@@ -1,11 +1,11 @@
-# foresee-sdk-cordova-samples
+# Cordova Sample App
 
-![](https://github.com/foreseecode/foresee-sdk-cordova-samples/sample_app_ios.png)
+![](https://github.com/foreseecode/foresee-sdk-cordova-sample/sample_app_ios.png)
 
 ## Clone this repo
 
 ```
-git clone https://github.com/foreseecode/foresee-sdk-cordova-samples
+git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
 ```
 
 ## Setup cordova app
@@ -13,6 +13,8 @@ git clone https://github.com/foreseecode/foresee-sdk-cordova-samples
 ```
 cd SampleApp
 ```
+
+## To set up the sample app, follow these instructions
 
 ## iOS
 
