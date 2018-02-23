@@ -14,7 +14,7 @@ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
 cd SampleApp
 ```
 
-## To set up the sample app, follow these instructions
+# To set up the sample app, follow these instructions
 
 ## iOS
 
@@ -37,7 +37,7 @@ cd SampleApp
 5. Build the android project: `cordova build android`
 6. Run the android project: `cordova run android`
 
-## ForeSeeAPI example
+## Here are some example commands that can be run from the ForeSee Cordova Plugin:
 
 ```
 cordova.plugins.ForeSeeAPI.start(this.onSuccess);
