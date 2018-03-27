@@ -36,5 +36,5 @@
         <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
-    <plugin name="cordova-plugin-foresee" spec="https://github.com/foreseecode/foresee-sdk-cordova-plugin" />
+    <engine name="android" spec="^7.1.0" />
 </widget>
