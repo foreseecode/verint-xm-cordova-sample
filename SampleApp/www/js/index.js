@@ -57,7 +57,19 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        cordova.plugins.ForeSeeAPI.start(this.onSuccess);
+        //cordova.plugins.ForeSeeAPI.start(this.onSuccess);
+        cordova.plugins.ForeSeeAPI.setDebugLogEnabled([true]);
+
+        var jsonConfig = '{"clientId":"Ij6P1lfZHchO/co10lQ4BQ==","cxReplayEnabled":true,"measures":[{"surveyId":"app_test_1","daysSinceLaunch":0,"launchCount":0,"significantEventThresholds":{"app_test_1": 4}}]}';
+        cordova.plugins.ForeSeeAPI.startWithConfigurationJson([jsonConfig], function success(data) {
+            cordova.plugins.ForeSeeAPI.setMaskingDebugEnabled([true]);
+        }, function failure(data){
+            alert('Error');
+            console.log("startWithConfigJson - failure " + data);
+        });
+
+
+
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
         document.getElementById("resetState").addEventListener("click", this.resetState);
