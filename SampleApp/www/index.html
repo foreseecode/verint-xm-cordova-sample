@@ -7,9 +7,7 @@
     to you under the Apache License, Version 2.0 (the
     "License"); you may not use this file except in compliance
     with the License.  You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
     Unless required by applicable law or agreed to in writing,
     software distributed under the License is distributed on an
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,40 +17,130 @@
 -->
 <html>
     <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>ForeSee Cordova Sample</title>
+        <title>Hello World</title>
     </head>
+   
+    <style>
+         .btn-group-base button {
+            background-color: yellow; /* Red background */
+            border: 1px solid white; /* whoite border */
+            color: black; /* Black text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            width: 100%;
+            display: block; /* Make the buttons appear below each other */
+        }
+         .btn-group-base button:hover {
+            background-color: rebeccapurple;
+        }
+         .btn-group-replay button {
+            background-color: peachpuff; /* Red background */
+            border: 1px solid white; /* whoite border */
+            color: black; /* Black text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            width: 100%;
+            display: block; /* Make the buttons appear below each other */
+        }
+         .btn-group-replay button:hover {
+            background-color: rebeccapurple;
+        }
+        .btn-group button {
+            background-color: #FF0000; /* Red background */
+            border: 1px solid white; /* whoite border */
+            color: black; /* Black text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            width: 100%;
+            display: block; /* Make the buttons appear below each other */
+        }
+        .btn-group button:not(:last-child) {
+            border-bottom: none; /* Prevent double borders */
+        }
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: rebeccapurple;
+        }
+    </style>
+
     <body>
         <div class="app">
-            <div class=description>
-                <p>
-                    This example shows how to use checkEligibility, showInvite and resetState methods.
-                </p>
-                <p>
-                    Use checkEligibility to check if the user is eligible for a survey. 
-                    If the user meets trigger criteria <b>and</b> is in the sampling pool, the invitation will be presented.
-                </p>
-                <p>
-                    Use resetState to reset the state of the tracker and (if applicable) reactivate the cxReplay module.
-                </p>
-                <p>
-                    Use showInvite to present (programmatically) the invitation for a given survey ID (sid).
-                </p>
+            <h3>ForeSee Cordova Demo</h3>
+
+            <div id="deviceready" class="blink" fs-masked>
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
             </div>
-            <div class=btn-group-red>
-                <!-- ForeSee buttons -->
-                <button id = "checkEligibility">Check Eligibility</button>
+
+            <div class="btn-group-base">
+                 <button id = "resetState">Reset State</button>
+                 <button id = "setDebugLogEnabled">setDebugLogEnabled</button>
+
+            </div>
+            
+            <div class="btn-group">
+                
+                <!-- Essentials -->
+                <button id = "showSurvey">Show Survey</button>
                 <button id = "showInvite">Show Invite</button>
+
+                <button id = "startWithConfigFile">Start w/ Config File</button>
+                <button id = "startWithConfigJson">Start w/ Config Json</button>
+                <button id = "start">Just Start</button>
+                
+                <button id = "checkEligibility">Check Eligibility</button>
+                <button id = "addCPPValue">Add CPP value ("hello")</button>
+                <button id = "removeCPPValue">Remove CPP value ("hello")</button>
+                <button id = "incrementPageViews">Increment page views</button>
+                <button id = "incrementSignificantEvent">Increment Siginificant Event</button>
+               
+                <button id = "showSurveyFail1">Show Survey Failure</button>
+                <button id = "showSurveyFail2">Show Survey Failure</button>
+                <button id = "showInviteFail">Show Invite Failure</button>
+                <button id = "addCPPFail1">Add CPP value Fail #1</button>
+                <button id = "addCPPFail2">Add CPP value Fail #2</button>
+                <button id = "removeCPPFail">Remove CPP Fail #1</button>
+                
+            
+                <!-- nice to have -->
+                <button id = "isDebugLogEnabled">Is debug Enabled</button>
+                <button id = "getVersion">Get Version</button>
+                <button id = "setContactDetails" fs-masked>Set contact details</button>
+                <button id = "getContactDetails" fs-masked>Get contact details</button>
+                <button id = "customInviteDeclined">Custom invite declined</button>
+                <button id = "customInviteAccepted">Custom invite accepted</button>
+                <button id = "setSkipPoolingCheck">setSkipPooling</button>
+
+                
             </div>
-            <div class=btn-group-white>
-                <!-- ForeSee buttons -->
-                <button id = "resetState">Reset State</button>
+
+            <div class="btn-group-replay">
+                <!-- Replay -->
+                <button id = "startRecording">Start recording</button>
+                <button id = "logReplayPageChange"> Log Replay Page</button>
+                <button id = "setMaskingDebugEnabled">Set Masking Debug True</button>
+                <button id = "isRecording">Is Recording</button>
+                <button id = "pauseRecording">Pause Recording</button>
+                <button id = "resumeRecording">Resume Recording</button>   
+
+                <button id = "setInviteListener">Set Invite Listener</button>             
             </div>
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
