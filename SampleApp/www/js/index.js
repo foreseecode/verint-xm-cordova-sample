@@ -57,7 +57,10 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        cordova.plugins.ForeSeeAPI.setDebugLogEnabled([true]);
         cordova.plugins.ForeSeeAPI.start(this.onSuccess);
+        cordova.plugins.ForeSeeAPI.setMaskingDebugEnabled(["true"], this.onSuccess, this.onFailure);
+        
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
         document.getElementById("resetState").addEventListener("click", this.resetState);

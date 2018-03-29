@@ -1,5 +1,11 @@
 {
 	"clientId":"FSRTESTINGCODECID12345==",
+	"cxReplayEnabled":true,
+	"cxReplayStorage": {
+		"cxReplayStorageLimitMegabytes": 750,
+		"cxReplayStorageLimitAsPercentageOfTotalSpace": 0.01,
+		"cxReplayCellularTransmissionLimitMegabytes": 200    
+	},
 	"measures":
 	[
 		{
