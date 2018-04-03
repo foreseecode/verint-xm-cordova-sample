@@ -209,7 +209,7 @@ function showSurveyFail2() {
 
 function showInviteFail() {
     console.log("ForeSeeAPI example Show Inivte Fail clicked");
-    cordova.plugins.ForeSeeAPI.showInvite([], function success(data){
+    cordova.plugins.ForeSeeAPI.showInvite(["BAD_ID"], function success(data){
         console.log("showInviteFail - success " + data);
     }
     , function failure(data){
