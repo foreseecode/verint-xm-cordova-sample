@@ -23,7 +23,18 @@ To set up the sample app, follow these instructions
 6. Run `cordova prepare`
 7. Go back to original folder: `cd ../..`
 8. Build iOS: `cordova build ios`
-9. Run iOS: `cordova run ios`
+9. Follow the instructions below:
+
+### 2.1.1 If running on a simulator
+1. Run iOS: `cordova run ios`
+
+### 2.1.2 If running on a device
+
+1. Open SampleApp/platforms/ios/ForeSeeCordova.xcodeproj in XCode
+2. Select the 'ForeSeeCordova' project in the project navigator
+3. Select a valid team in the 'Signing' section
+4. Exit XCode
+5. Run iOS: `cordova run ios`
 
 ## 2.2 Android
 
