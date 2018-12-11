@@ -19,7 +19,6 @@ The instructions below will assume you've successsfully cloned the project and n
 
    `$ cordova prepare`
 
-1. Open `platforms/android/app/src/main/AndroidManifest.xml` in an editor and modify the minimum SDK version property to read `android:minSdkVersion="19"`
 1. Build and run:
 
    ```
