@@ -19,7 +19,6 @@ The instructions below will assume you've successsfully cloned the project and n
 
    `$ cordova prepare`
 
-1. Open `platforms/android/app/src/main/AndroidManifest.xml` in an editor and modify the minimum SDK version property to read `android:minSdkVersion="19"`
 1. Build and run:
 
    ```
@@ -53,7 +52,7 @@ The instructions below will assume you've successsfully cloned the project and n
 1. Go to the iOS dir: 
 
    `$ cd platforms/ios`
-1. Edit the  `Podfile` and modify the `platform` line to read `platform :ios, '9.0'`. (This addresses the issue noted above.)
+1. Edit the  `Podfile` and modify the `platform` line to read `platform :ios, '10.0'`. (This addresses the issue noted above.)
 1. Update pods: 
 
    `$ pod install`
