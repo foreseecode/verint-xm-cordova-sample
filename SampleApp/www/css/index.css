@@ -103,7 +103,6 @@ img {
     margin-top: 10px;
     cursor: pointer; /* Pointer/hand icon */
     width: 100%; /* Set a width if needed */
-    max-width: 700px;
     display: block; /* Make the buttons appear below each other */
 }
 
@@ -116,7 +115,6 @@ img {
     margin-top: 10px;
     cursor: pointer; /* Pointer/hand icon */
     width: 100%; /* Set a width if needed */
-    max-width: 700px;
     display: block; /* Make the buttons appear below each other */
 }
 
