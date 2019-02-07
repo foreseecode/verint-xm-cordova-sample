@@ -62,6 +62,9 @@ var app = {
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
+        // Enable debug logs
+        cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
+
         console.log('Received Event: ' + id);
     }
 };
