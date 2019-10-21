@@ -50,6 +50,12 @@ var app = {
         cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
     },
 
+    //show feedback button click handler
+    showFeedback: function(){
+        console.log("Show feedback click");
+        cordova.plugins.ForeSeeAPI.showFeedback(this.onSuccess, this.onError);
+    },
+
     resetState: function(){
         console.log('Reset the ForeSee SDK state');
         cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
@@ -60,6 +66,7 @@ var app = {
         cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
+        document.getElementById("showFeedback").addEventListener("click", this.showFeedback);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
