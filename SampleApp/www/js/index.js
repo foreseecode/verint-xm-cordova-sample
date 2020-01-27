@@ -72,6 +72,9 @@ var app = {
         // Enable debug logs
         cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
 
+        // Check eligibility on start to demonstrate showing an incompleted invite
+        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+
         console.log('Received Event: ' + id);
     }
 };
