@@ -38,19 +38,19 @@ var app = {
     },
 
     // checkEligibility button click handler
-    checkEligibility: function(){
+    checkEligibility: function() {
         console.log("Check if eligible for survey");
         cordova.plugins.ForeSeeAPI.incrementSignificantEventCount(["instant_survey"], this.onSuccess, this.onError);
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
     },
 
     //show invite button click handler
-    showInvite: function(){
+    showInvite: function() {
         console.log("Show invite click");
         cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
     },
 
-    resetState: function(){
+    resetState: function() {
         console.log('Reset the ForeSee SDK state');
         cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
     },
