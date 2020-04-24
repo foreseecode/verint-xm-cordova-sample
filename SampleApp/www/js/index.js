@@ -44,13 +44,19 @@ var app = {
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
     },
 
-    //show invite button click handler
+    // show invite button click handler
     showInvite: function() {
         console.log("Show invite click");
         cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
     },
 
-    resetState: function() {
+    // show feedback button click handler
+    showFeedback: function(){
+        console.log("Show feedback click");
+        cordova.plugins.ForeSeeAPI.showFeedback(this.onSuccess, this.onError);
+    },
+
+    resetState: function(){
         console.log('Reset the ForeSee SDK state');
         cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
     },
@@ -60,14 +66,17 @@ var app = {
         cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
+        document.getElementById("showFeedback").addEventListener("click", this.showFeedback);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
         cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
 
+        // Check eligibility on start to demonstrate showing an incompleted invite
+        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+
         console.log('Received Event: ' + id);
     }
 };
-
 
 app.initialize();
