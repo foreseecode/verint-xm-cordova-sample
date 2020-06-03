@@ -38,19 +38,19 @@ var app = {
     },
 
     // checkEligibility button click handler
-    checkEligibility: function(){
+    checkEligibility: function() {
         console.log("Check if eligible for survey");
         cordova.plugins.ForeSeeAPI.incrementSignificantEventCount(["instant_survey"], this.onSuccess, this.onError);
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
     },
 
-    //show invite button click handler
-    showInvite: function(){
+    // show invite button click handler
+    showInvite: function() {
         console.log("Show invite click");
         cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
     },
 
-    //show feedback button click handler
+    // show feedback button click handler
     showFeedback: function(){
         console.log("Show feedback click");
         cordova.plugins.ForeSeeAPI.showFeedback(this.onSuccess, this.onError);
@@ -78,6 +78,5 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
 
 app.initialize();

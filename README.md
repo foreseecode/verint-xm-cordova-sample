@@ -74,7 +74,7 @@ The instructions below will assume you've successsfully cloned the project and n
 
    `$ cordova emulate ios --buildFlag="-UseModernBuildSystem=0"`
 
-   You probaby also want to specify a target (e.g. `--target="iPhone-X, 12.0"`). Putting it all together:
+   You'll probably also want to specify a target (e.g. `--target="iPhone-X, 12.0"`). Putting it all together:
 
    `$ cordova emulate ios --buildFlag="-UseModernBuildSystem=0" --target="iPhone-X, 12.0"`
 
