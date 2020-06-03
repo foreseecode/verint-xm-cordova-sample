@@ -23,11 +23,11 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
-    onSuccess: function(data){
+    onSuccess: function(data) {
         console.log("Success call " + data);
     }, 
 
-    onError: function(err){
+    onError: function(err) {
         alert('Error');
         console.log("Error call " + err);
     },
@@ -51,12 +51,12 @@ var app = {
     },
 
     // show feedback button click handler
-    showFeedback: function(){
+    showFeedback: function() {
         console.log("Show feedback click");
         cordova.plugins.ForeSeeAPI.showFeedback(this.onSuccess, this.onError);
     },
 
-    resetState: function(){
+    resetState: function() {
         console.log('Reset the ForeSee SDK state');
         cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
     },
