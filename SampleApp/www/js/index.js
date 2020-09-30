@@ -75,6 +75,12 @@ var app = {
         // Check eligibility on start to demonstrate showing an incompleted invite
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
 
+        cordova.plugins.notification.local.on("click", function (notification) {
+          if (notification.FSLocalNotificationMeasureKey != null) {
+            cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+          }
+        }, this);
+
         console.log('Received Event: ' + id);
     }
 };
