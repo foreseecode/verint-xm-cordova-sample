@@ -35,6 +35,27 @@ var app = {
     // deviceready Event Handler
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        cordova.plugins.ForeSeeAPI.start(this.onSuccess);
+        document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
+        document.getElementById("showInvite").addEventListener("click", this.showInvite);
+        document.getElementById("showFeedback").addEventListener("click", this.showFeedback);
+        document.getElementById("resetState").addEventListener("click", this.resetState);
+
+        // Enable debug logs
+        cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
+
+        // Check eligibility on start to demonstrate showing an incompleted invite
+        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+
+        // Register Verint-ForeSee SDK for notification tap events
+        if(device.platform == "iOS") {
+            cordova.plugins.notification.local.on("click", function (notification) {
+                if (notification.FSLocalNotificationMeasureKey != null) {
+                cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+                }
+            }, this);  
+        }
     },
 
     // checkEligibility button click handler
@@ -63,23 +84,6 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        cordova.plugins.ForeSeeAPI.start(this.onSuccess);
-        document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
-        document.getElementById("showInvite").addEventListener("click", this.showInvite);
-        document.getElementById("showFeedback").addEventListener("click", this.showFeedback);
-        document.getElementById("resetState").addEventListener("click", this.resetState);
-
-        // Enable debug logs
-        cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
-
-        // Check eligibility on start to demonstrate showing an incompleted invite
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
-
-        cordova.plugins.notification.local.on("click", function (notification) {
-          if (notification.FSLocalNotificationMeasureKey != null) {
-            cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
-          }
-        }, this);
 
         console.log('Received Event: ' + id);
     }
