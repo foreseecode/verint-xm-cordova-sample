@@ -34,8 +34,6 @@ var app = {
 
     // deviceready Event Handler
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-
         cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
@@ -80,12 +78,6 @@ var app = {
     resetState: function() {
         console.log('Reset the ForeSee SDK state');
         cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-
-        console.log('Received Event: ' + id);
     }
 };
 
