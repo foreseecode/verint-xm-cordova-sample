@@ -59,7 +59,19 @@ var app = {
                     cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
                     }
                 }, this);  
-            }
+
+                // Determine if the app was launched from a 'click' event on a local notification
+                // (will only work whe the app is killed)
+                // WARNING: This could cause the ForeSee survey to launch if your app's push notifications also fulfil this conditional
+                var launchDetails = cordova.plugins.notification.local.launchDetails;    
+                if (typeof launchDetails != 'undefined' 
+                    && launchDetails.action == 'click') {
+                            
+                    // This workaround is hardcoded to a particular SID, and will only work 
+                    // if you know which survey (SID) is launched from your local notification
+                    cordova.plugins.ForeSeeAPI.showSurvey(["android_app_QA"], this.onSuccess, this.onFailure);
+                }
+            }    
         }, millisecondsToWait);
      },
 
