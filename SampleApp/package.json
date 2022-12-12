@@ -10,19 +10,26 @@
   "author": "ForeSee",
   "license": "Apache-2.0",
   "dependencies": {
-    "ForeSeeAPI": "file:../../foresee-sdk-cordova-plugin",
     "cordova-ios": "^5.1.1",
     "cordova-plugin-local-notification": "^0.9.0-beta.3",
-    "cordova-plugin-whitelist": "^1.3.2"
+    "jetifier": "^2.0.0"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-local-notification": {},
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-foresee": {}
+      "cordova-plugin-foresee": {},
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
+  },
+  "devDependencies": {
+    "cordova-android": "^10.1.2",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
+    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-device": "^2.1.0",
+    "ForeSeeAPI": "github:foreseecode/foresee-sdk-cordova-plugin"
   }
 }
