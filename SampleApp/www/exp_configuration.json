@@ -1,11 +1,10 @@
 {
-    "clientId": "FSRTESTINGCODECID12345==",
+    "customerId": "FSRTESTINGCODECID12345==",
     "notificationType": "EXIT_SURVEY",
     "measures":
     [
         {
             "surveyId": "android_app_QA",
-            "daysSinceLaunch": 0,
             "launchCount": 0,
             "significantEventThresholds":
             {
