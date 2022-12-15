@@ -16,11 +16,11 @@
         "logo": "foresee_logo",
         "baseColor": [237, 38, 54]
     },
-    "feedback":{
-        "feedbackSurveys":[
+    "digital":{
+        "digitalSurveys":[
           {
             "name":"Sample 1",
-            "feedbackId":"40egY2o9Jt"
+            "surveyId":"40egY2o9Jt"
           }
         ],
         "surveyCompletionPageDelay":3
