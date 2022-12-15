@@ -1,4 +1,4 @@
-# Cordova Sample App
+# Verint-XM Cordova Sample App
 
 ![](https://github.com/foreseecode/foresee-sdk-cordova-sample/sample_app_ios.png)
 
@@ -15,6 +15,7 @@ The instructions below will assume you've successsfully cloned the project and n
 1. Add the Android platform:
 
    `$ cordova platform add android`
+
 1. Prepare:
 
    `$ cordova prepare`
@@ -27,6 +28,7 @@ The instructions below will assume you've successsfully cloned the project and n
    ```
 
 ## iOS Installation
+
 1. Add the iOS platform: 
 
    `$ cordova platform add ios`
@@ -46,37 +48,17 @@ The instructions below will assume you've successsfully cloned the project and n
    ```
 
    This is a [known Cordova issue](https://issues.apache.org/jira/browse/CB-13597), which we'll address in the next few steps.
+
 1. Prepare:
 
    `$ cordova prepare`
-1. Go to the iOS dir: 
 
-   `$ cd platforms/ios`
-1. Edit the  `Podfile` and modify the `platform` line to read `platform :ios, '10.0'`. (This addresses the issue noted above.)
-1. Update pods: 
-
-   `$ pod install`
-1. Go back to original folder: 
-
-   `$ cd ../..`
 1. Build and run:
 
    ```
    $ cordova build ios
    $ cordova run ios
    ```
-
-   Or run:
-   
-   `$ cordova emulate ios`
-
-   As of Xcode 10.x you'll need to add the `UseModernBuildSystem=0` build flag: 
-
-   `$ cordova emulate ios --buildFlag="-UseModernBuildSystem=0"`
-
-   You'll probably also want to specify a target (e.g. `--target="iPhone-X, 12.0"`). Putting it all together:
-
-   `$ cordova emulate ios --buildFlag="-UseModernBuildSystem=0" --target="iPhone-X, 12.0"`
 
 ### Running on an iOS Device
 In order to run on a real device, you'll need to select a valid development team
