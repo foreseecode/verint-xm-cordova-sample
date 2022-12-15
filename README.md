@@ -23,7 +23,6 @@ The instructions below will assume you've successsfully cloned the project and n
 1. Build and run:
 
    ```
-   $ cordova build android
    $ cordova run android
    ```
 
@@ -40,7 +39,6 @@ The instructions below will assume you've successsfully cloned the project and n
 1. Build and run:
 
    ```
-   $ cordova build ios
    $ cordova run ios
    ```
 
