@@ -33,22 +33,6 @@ The instructions below will assume you've successsfully cloned the project and n
 
    `$ cordova platform add ios`
 
-   Note: you should expect to see the following error in the command's output:
-
-   ```
-   Discovered plugin "cordova-plugin-foresee" in config.xml. Adding it to the project
-   Installing "cordova-plugin-foresee" for ios
-   Failed to install 'cordova-plugin-foresee': Error: pod: Command failed with exit code 1
-        at ChildProcess.whenDone (/Users/wayne.burkett/foresee/test/foresee-sdk-cordova-sample/SampleApp/platforms/ios/cordova/node_modules/cordova-common/src/superspawn.js:169:23)
-        at emitTwo (events.js:106:13)
-        at ChildProcess.emit (events.js:191:7)
-        at maybeClose (internal/child_process.js:877:16)
-        at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
-   Failed to restore plugin "cordova-plugin-foresee" from config.xml. You might need to try adding it again. Error: Error: pod: Command failed with exit code 1
-   ```
-
-   This is a [known Cordova issue](https://issues.apache.org/jira/browse/CB-13597), which we'll address in the next few steps.
-
 1. Prepare:
 
    `$ cordova prepare`
