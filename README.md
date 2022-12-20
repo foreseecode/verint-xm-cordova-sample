@@ -4,53 +4,56 @@
 
 ## Prerequisites
 
+You'll need to clone the sample and plugin repo
 ```
 $ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
-$ cd SampleApp/
+$ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
+$ cd foresee-sdk-cordova-sample/SampleApp/
 ```
 
 The instructions below will assume you've successsfully cloned the project and navigated to the `SampleApp` directory.
 
+## Plugin Installation
+`cordova plugin add ../../foresee-sdk-cordova-plugin`
+
 ## Android Installation
-1. Add the Android platform:
-
-   `$ cordova platform add android`
-
+1. Connect an Android device or start an emulator
 1. Prepare:
 
    `$ cordova prepare`
 
 1. Build and run:
 
-   ```
-   $ cordova run android
-   ```
+   `$ cordova run android`
 
 ## iOS Installation
 
-1. Add the iOS platform: 
-
-   `$ cordova platform add ios`
-
 1. Prepare:
 
    `$ cordova prepare`
 
+1. Update cocoapods
+   ```
+   cd platforms/ios
+   pod install --repo-update
+   cd ../..
+   ```
+
+1. Select a development team (see Running on an iOS Device, below)
+
 1. Build and run:
 
-   ```
-   $ cordova run ios
-   ```
+   `$ cordova run ios`
 
 ### Running on an iOS Device
-In order to run on a real device, you'll need to select a valid development team
+In order to run on iOS, you'll need to select a valid development team
 
 1. Open `platforms/ios/ForeSeeCordova.xcodeproj` in Xcode
 1. Select the `ForeSeeCordova` project in the project navigator
 1. Select a valid team in the `Signing` section
 1. Return to the command line and run iOS: 
 
-   `$ cordova run ios --buildFlag="-UseModernBuildSystem=0"`
+   `$ cordova run ios`
 
 ## Example commands
 
