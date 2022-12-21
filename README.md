@@ -40,6 +40,7 @@ Then return to your sample app and add the plugin using the path to the plugin r
 
 ```
 $ cordova plugin add <PATH_TO_REPO_DIR>/foresee-sdk-cordova-plugin --nofetch
+```
 
 
 ## Android Installation
