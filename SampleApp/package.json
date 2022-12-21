@@ -30,6 +30,6 @@
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-device": "^2.1.0",
-    "ForeSeeAPI": "file:../../foresee-sdk-cordova-plugin"
+    "ForeSeeAPI": "github:foreseecode/foresee-sdk-cordova-plugin#VOC-5479"
   }
 }
