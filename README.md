@@ -14,7 +14,7 @@ The instructions below will assume you've successsfully cloned the project and n
 
 ## Plugin Installation
 
-### Add from Github
+### Adding from Github
 
 ```
 $ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
