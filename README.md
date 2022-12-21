@@ -4,9 +4,8 @@
 
 ## Prerequisites
 
-You'll need to clone the sample and plugin repo
+Clone this repo and change to the `SampleApp` directory:
 ```
-$ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
 $ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
 $ cd foresee-sdk-cordova-sample/SampleApp/
 ```
@@ -14,10 +13,43 @@ $ cd foresee-sdk-cordova-sample/SampleApp/
 The instructions below will assume you've successsfully cloned the project and navigated to the `SampleApp` directory.
 
 ## Plugin Installation
-`cordova plugin add ../../foresee-sdk-cordova-plugin`
+
+### Add from Github
+
+```
+$ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
+```
+
+### Adding from Github for a specific branch
+
+```
+$ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin#develop
+```
+
+### Adding for local development
+
+Clone the repo dir and prepare for use
+
+```
+$ git clone https://github.com/foreseecode/foresee-sdk-cordova-plugin
+$ cd foresee-sdk-cordova-plugin
+$ npm install
+```
+
+Then return to your sample app and add the plugin using the path to the plugin repo you just checked out:
+
+```
+$ cordova plugin add <PATH_TO_REPO_DIR>/foresee-sdk-cordova-plugin --nofetch
+
 
 ## Android Installation
+
 1. Connect an Android device or start an emulator
+
+1. Install the platform
+
+   `$ cordova platform add android`
+
 1. Prepare:
 
    `$ cordova prepare`
@@ -28,11 +60,15 @@ The instructions below will assume you've successsfully cloned the project and n
 
 ## iOS Installation
 
+1. Install the platform
+
+   `$ cordova platform add ios`
+
 1. Prepare:
 
    `$ cordova prepare`
 
-1. Update cocoapods
+1. The above commands will in most cases run `pod install` automatically, but if not (check their output), then the command can be run manually:
    ```
    cd platforms/ios
    pod install --repo-update
@@ -46,6 +82,7 @@ The instructions below will assume you've successsfully cloned the project and n
    `$ cordova run ios`
 
 ### Running on an iOS Device
+
 In order to run on iOS, you'll need to select a valid development team
 
 1. Open `platforms/ios/ForeSeeCordova.xcodeproj` in Xcode
@@ -57,7 +94,7 @@ In order to run on iOS, you'll need to select a valid development team
 
 ## Example commands
 
-Here are some commands that can be run from the ForeSee Cordova Plugin:
+Here are some commands that can be run from the Verint-XM Cordova Plugin:
 
 ```
 cordova.plugins.ForeSeeAPI.start(this.onSuccess);
