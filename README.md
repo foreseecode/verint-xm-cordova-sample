@@ -47,6 +47,12 @@ $ cordova plugin add <PATH_TO_REPO_DIR>/foresee-sdk-cordova-plugin --nofetch
 
 1. Connect an Android device or start an emulator
 
+1. Set up the required environment variables
+
+    To install the plugin for Android, you'll need to authenticate with GitHub Packages to download our library. To do so, you'll need a personal key which can be generated from your GitHub account by following the instructions [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). The token will need the `read:packages` permission.
+
+    Once you have that key, you should set two environment variables on your machine: `GITHUB_USERNAME` for your username, and `GITHUB_PERSONAL_KEY` for your personal key
+
 1. Install the platform
 
    `$ cordova platform add android`
