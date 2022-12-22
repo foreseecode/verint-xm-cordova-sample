@@ -37,20 +37,20 @@ var app = {
         cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
-        document.getElementById("showFeedback").addEventListener("click", this.showFeedback);
+        document.getElementById("showDigitalSurvey").addEventListener("click", this.showDigitalSurvey);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
         cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
 
-        // Check eligibility on start to demonstrate showing an incompleted invite
+        // Check eligibility on start to demonstrate showing an incomplete invite
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
 
         // Register Verint-ForeSee SDK for notification tap events
-        if(device.platform == "iOS") {
+        if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
                 if (notification.FSLocalNotificationMeasureKey != null) {
-                cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+                    cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
                 }
             }, this);  
         }
@@ -69,10 +69,10 @@ var app = {
         cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
     },
 
-    // show feedback button click handler
-    showFeedback: function() {
-        console.log("Show feedback click");
-        cordova.plugins.ForeSeeAPI.showFeedback(this.onSuccess, this.onError);
+    // show digital survey button click handler
+    showDigitalSurvey: function() {
+        console.log("Show DigitalSurvey click");
+        cordova.plugins.ForeSeeAPI.showDigitalSurvey(this.onSuccess, this.onError);
     },
 
     resetState: function() {

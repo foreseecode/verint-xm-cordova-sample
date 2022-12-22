@@ -1,11 +1,10 @@
 {
-    "clientId": "FSRTESTINGCODECID12345==",
+    "customerId": "FSRTESTINGCODECID12345==",
     "notificationType": "EXIT_SURVEY",
     "measures":
     [
         {
             "surveyId": "android_app_QA",
-            "daysSinceLaunch": 0,
             "launchCount": 0,
             "significantEventThresholds":
             {
@@ -14,14 +13,14 @@
         }
     ],
     "invite": {
-        "logo": "",
+        "logo": "foresee_logo",
         "baseColor": [237, 38, 54]
     },
-    "feedback":{
-        "feedbackSurveys":[
+    "digital":{
+        "digitalSurveys":[
           {
             "name":"Sample 1",
-            "feedbackId":"40egY2o9Jt"
+            "surveyId":"40egY2o9Jt"
           }
         ],
         "surveyCompletionPageDelay":3
