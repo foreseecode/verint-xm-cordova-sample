@@ -16,8 +16,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-local-notification": {},
-      "cordova-plugin-androidx-adapter": {},
-      "cordova-plugin-foresee": {}
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
       "android",
@@ -30,6 +29,5 @@
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-device": "^2.1.0",
-    "ForeSeeAPI": "github:foreseecode/foresee-sdk-cordova-plugin#VOC-5479"
   }
 }
