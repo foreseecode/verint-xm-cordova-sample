@@ -17,12 +17,14 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <resource-file src="www/img/foresee_logo.png" target="app/src/main/res/drawable/foresee_logo.png"/>
         <icon density="hdpi" src="res/icon/android/hdpi.png" />
         <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
         <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
     </platform>
     <platform name="ios">
+        <resource-file src="www/img/foresee_logo.png" target="foresee_logo.png"/>
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
