@@ -34,7 +34,6 @@ var app = {
 
     // deviceready Event Handler
     onDeviceReady: function() {
-        cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
         document.getElementById("showInvite").addEventListener("click", this.showInvite);
         document.getElementById("showDigitalSurvey").addEventListener("click", this.showDigitalSurvey);
