@@ -58,7 +58,7 @@ var app = {
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.ForeSeeAPI.incrementSignificantEventCount(["instant_survey"], this.onSuccess, this.onError);
+        cordova.plugins.ForeSeeAPI.incrementSignificantEvent(["instant_survey"], this.onSuccess, this.onError);
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
     },
 
