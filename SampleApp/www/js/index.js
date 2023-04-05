@@ -44,15 +44,6 @@ var app = {
 
         // Check eligibility on start to demonstrate showing an incomplete invite
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
-
-        // Register Verint-ForeSee SDK for notification tap events
-        if (device.platform == "iOS") {
-            cordova.plugins.notification.local.on("click", function (notification) {
-                if (notification.EXPLocalNotificationMeasureKey != null) {
-                    cordova.plugins.ForeSeeAPI.showSurvey([notification.EXPLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
-                }
-            }, this);  
-        }
     },
 
     // checkEligibility button click handler

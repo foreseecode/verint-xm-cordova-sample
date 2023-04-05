@@ -10,12 +10,10 @@
   "author": "ForeSee",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-plugin-local-notification": "^0.9.0-beta.3",
     "jetifier": "^2.0.0"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-local-notification": {},
       "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
