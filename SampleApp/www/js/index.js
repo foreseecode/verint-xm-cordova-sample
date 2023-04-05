@@ -48,8 +48,8 @@ var app = {
         // Register Verint-ForeSee SDK for notification tap events
         if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
-                if (notification.FSLocalNotificationMeasureKey != null) {
-                    cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+                if (notification.EXPLocalNotificationMeasureKey != null) {
+                    cordova.plugins.ForeSeeAPI.showSurvey([notification.EXPLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
                 }
             }, this);  
         }
