@@ -40,7 +40,7 @@ var app = {
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
-        cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
+        cordova.plugins.ForeSeeAPI.setDebugLogEnabled("true", this.onSuccess, this.onError);
 
         // Check eligibility on start to demonstrate showing an incomplete invite
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
@@ -49,7 +49,7 @@ var app = {
         if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
                 if (notification.EXPLocalNotificationMeasureKey != null) {
-                    cordova.plugins.ForeSeeAPI.showSurvey([notification.EXPLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+                    cordova.plugins.ForeSeeAPI.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
                 }
             }, this);  
         }
@@ -58,14 +58,14 @@ var app = {
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.ForeSeeAPI.incrementSignificantEvent(["instant_survey"], this.onSuccess, this.onError);
+        cordova.plugins.ForeSeeAPI.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
         cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
     },
 
     // show invite button click handler
     showInvite: function() {
         console.log("Show invite click");
-        cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
+        cordova.plugins.ForeSeeAPI.showInvite("android_app_QA", this.onSuccess, this.onError);
     },
 
     // show digital survey button click handler
