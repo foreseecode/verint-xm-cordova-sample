@@ -53,6 +53,34 @@ var app = {
                 }
             }, this);  
         }
+
+        // Request permissions for Android 33
+        if (device.platform == "Android") {
+            var permissions = cordova.plugins.permissions;
+
+            permissions.hasPermission(permissions.POST_NOTIFICATIONS, function (status) {
+                if (status.hasPermission) {
+                    // Permission has been granted previously, no need to request it again.
+                } else {
+                    var error = function () {
+                        // Permission has been denied.
+                        console.warn('permission has been denied');
+                    };
+
+                    var success = function (status) {
+                        if (!status.hasPermission) {
+                            // Permission has been denied.
+                            error();
+                        } else {
+                            console.warn('permission has been granted');
+                        }
+                    };
+
+                    // Request the permission to allow notifications.
+                    permissions.requestPermission(permissions.POST_NOTIFICATIONS, success, error);
+                }
+            })
+        }
     },
 
     // checkEligibility button click handler

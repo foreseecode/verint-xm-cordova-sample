@@ -16,7 +16,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-local-notification": {},
-      "cordova-plugin-androidx-adapter": {}
+      "cordova-plugin-androidx-adapter": {},
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "android",
