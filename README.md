@@ -104,9 +104,10 @@ In order to run on iOS, you'll need to select a valid development team
 Here are some commands that can be run from the Verint-XM Cordova Plugin:
 
 ```
-cordova.plugins.ForeSeeAPI.start(this.onSuccess);
+cordova.plugins.ForeSeeAPI.start(null, this.onSuccess, this.onError);
+cordova.plugins.ForeSeeAPI.start(configJSON, this.onSuccess, this.onError);
 cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);
-cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
+cordova.plugins.ForeSeeAPI.showInvite("android_app_QA", this.onSuccess, this.onError);
 cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
 ```
 
