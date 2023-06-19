@@ -43,7 +43,11 @@ var app = {
         cordova.plugins.ForeSeeAPI.setDebugLogEnabled("true", this.onSuccess, this.onError);
 
         // Check eligibility on start to demonstrate showing an incomplete invite
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);
+
+        // Listeners
+        cordova.plugins.ForeSeeAPI.setInviteListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.ForeSeeAPI.setDigitalListener(function success(data) {}, function failure(error) {});
 
         // Register Verint-ForeSee SDK for notification tap events
         if (device.platform == "iOS") {
