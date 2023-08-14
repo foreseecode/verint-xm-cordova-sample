@@ -1,13 +1,13 @@
 {
   "name": "sampleapp",
-  "displayName": "ForeSeeCordova",
+  "displayName": "VerintXM",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application. Integration with the ForeSee SDK.",
+  "description": "A sample Apache Cordova application. Integration with the Verint SDK.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ForeSee",
+  "author": "Verint",
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-plugin-local-notification": "^0.9.0-beta.3",

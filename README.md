@@ -1,13 +1,13 @@
 # Verint-XM Cordova Sample App
 
-![](https://github.com/foreseecode/foresee-sdk-cordova-sample/sample_app_ios.png)
+![](https://github.com/foreseecode/verint-xm-cordova-sample/sample_app_ios.png)
 
 ## Prerequisites
 
 Clone this repo and change to the `SampleApp` directory:
 ```
-$ git clone https://github.com/foreseecode/foresee-sdk-cordova-sample
-$ cd foresee-sdk-cordova-sample/SampleApp/
+$ git clone https://github.com/foreseecode/verint-xm-cordova-sample
+$ cd verint-xm-cordova-sample/SampleApp/
 ```
 
 The instructions below will assume you've successsfully cloned the project and navigated to the `SampleApp` directory.
@@ -17,13 +17,13 @@ The instructions below will assume you've successsfully cloned the project and n
 ### Adding from Github
 
 ```
-$ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin
+$ cordova plugin add https://github.com/foreseecode/verint-xm-cordova-plugin
 ```
 
 ### Adding from Github for a specific branch
 
 ```
-$ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin#develop
+$ cordova plugin add https://github.com/foreseecode/verint-xm-cordova-plugin#develop
 ```
 
 ### Adding for local development
@@ -31,15 +31,15 @@ $ cordova plugin add https://github.com/foreseecode/foresee-sdk-cordova-plugin#d
 Clone the repo dir and prepare for use
 
 ```
-$ git clone https://github.com/foreseecode/foresee-sdk-cordova-plugin
-$ cd foresee-sdk-cordova-plugin
+$ git clone https://github.com/foreseecode/verint-xm-cordova-plugin
+$ cd verint-xm-cordova-plugin
 $ npm install
 ```
 
 Then return to your sample app and add the plugin using the path to the plugin repo you just checked out:
 
 ```
-$ cordova plugin add <PATH_TO_REPO_DIR>/foresee-sdk-cordova-plugin --nofetch
+$ cordova plugin add <PATH_TO_REPO_DIR>/verint-xm-cordova-plugin --nofetch
 ```
 
 
@@ -92,8 +92,8 @@ $ cordova plugin add <PATH_TO_REPO_DIR>/foresee-sdk-cordova-plugin --nofetch
 
 In order to run on iOS, you'll need to select a valid development team
 
-1. Open `platforms/ios/ForeSeeCordova.xcodeproj` in Xcode
-1. Select the `ForeSeeCordova` project in the project navigator
+1. Open `platforms/ios/VerintXM.xcodeproj` in Xcode
+1. Select the `VerintXM` project in the project navigator
 1. Select a valid team in the `Signing` section
 1. Return to the command line and run iOS: 
 
@@ -104,11 +104,11 @@ In order to run on iOS, you'll need to select a valid development team
 Here are some commands that can be run from the Verint-XM Cordova Plugin:
 
 ```
-cordova.plugins.ForeSeeAPI.start(null, this.onSuccess, this.onError);
-cordova.plugins.ForeSeeAPI.start(configJSON, this.onSuccess, this.onError);
-cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);
-cordova.plugins.ForeSeeAPI.showInvite("android_app_QA", this.onSuccess, this.onError);
-cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
+cordova.plugins.VerintXM.start(null, this.onSuccess, this.onError);
+cordova.plugins.VerintXM.start(configJSON, this.onSuccess, this.onError);
+cordova.plugins.VerintXM.checkEligibility(this.onSuccess, this.onError);
+cordova.plugins.VerintXM.showInvite("android_app_QA", this.onSuccess, this.onError);
+cordova.plugins.VerintXM.resetState(this.onSuccess, this.onError);
 ```
 
 ## License 

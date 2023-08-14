@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.foresee.cordova.sample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ForeSeeCordova</name>
+<widget id="com.verint.xm.cordova.sample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>VerintXM</name>
     <description>
-        A sample Apache Cordova application. Integration with the ForeSee SDK.
+        A sample Apache Cordova application. Integration with the Verint SDK.
     </description>
-    <author email="pavel.mogilevsky@foresee.com" href="http://www.foresee.com">
-        ForeSee Mobile Team
+    <author email="xm-mobile-team@verint.com" href="http://www.verint.com">
+        Verint Mobile Team
     </author>
     <content src="index.html" />
     <access origin="*" />
