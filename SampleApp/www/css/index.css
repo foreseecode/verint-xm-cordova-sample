@@ -94,8 +94,8 @@ img {
 }
 
 
-.btn-group-red button {
-    background-color: #F11439; /* Red background */
+.btn-group-original button {
+    background-color: #2B65F2; /* Original blue background */
     border: 1px solid white; /* White border */
     color: white; /* White text */
     padding: 10px 10px; /* Some padding */
