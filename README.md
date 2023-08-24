@@ -1,7 +1,5 @@
 # Verint-XM Cordova Sample App
 
-![](https://github.com/foreseecode/verint-xm-cordova-sample/sample_app_ios.png)
-
 ## Prerequisites
 
 Clone this repo and change to the `SampleApp` directory:
@@ -104,11 +102,11 @@ In order to run on iOS, you'll need to select a valid development team
 Here are some commands that can be run from the Verint-XM Cordova Plugin:
 
 ```
-cordova.plugins.VerintXM.start(null, this.onSuccess, this.onError);
-cordova.plugins.VerintXM.start(configJSON, this.onSuccess, this.onError);
-cordova.plugins.VerintXM.checkEligibility(this.onSuccess, this.onError);
-cordova.plugins.VerintXM.showInvite("android_app_QA", this.onSuccess, this.onError);
-cordova.plugins.VerintXM.resetState(this.onSuccess, this.onError);
+cordova.plugins.verint.xm.start(null, this.onSuccess, this.onError);
+cordova.plugins.verint.xm.start(configJSON, this.onSuccess, this.onError);
+cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
+cordova.plugins.verint.xm.showInvite("android_app_QA", this.onSuccess, this.onError);
+cordova.plugins.verint.xm.resetState(this.onSuccess, this.onError);
 ```
 
 ## License 
