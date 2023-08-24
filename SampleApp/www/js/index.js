@@ -40,20 +40,20 @@ var app = {
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
-        cordova.plugins.VerintXM.setDebugLogEnabled("true", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.setDebugLogEnabled("true", this.onSuccess, this.onError);
 
         // Check eligibility on start to demonstrate showing an incomplete invite
-        cordova.plugins.VerintXM.checkEligibility(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
 
         // Listeners
-        cordova.plugins.VerintXM.setInviteListener(function success(data) {}, function failure(error) {});
-        cordova.plugins.VerintXM.setDigitalListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setInviteListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setDigitalListener(function success(data) {}, function failure(error) {});
 
         // Register Verint-Verint SDK for notification tap events
         if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
                 if (notification.EXPLocalNotificationMeasureKey != null) {
-                    cordova.plugins.VerintXM.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
+                    cordova.plugins.verint.xm.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
                 }
             }, this);  
         }
@@ -90,25 +90,25 @@ var app = {
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.VerintXM.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
-        cordova.plugins.VerintXM.checkEligibility(this.onSuccess, this.onError);   
+        cordova.plugins.verint.xm.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
     },
 
     // show invite button click handler
     showInvite: function() {
         console.log("Show invite click");
-        cordova.plugins.VerintXM.showInvite("android_app_QA", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.showInvite("android_app_QA", this.onSuccess, this.onError);
     },
 
     // show digital survey button click handler
     showDigitalSurvey: function() {
         console.log("Show DigitalSurvey click");
-        cordova.plugins.VerintXM.showDigitalSurvey(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.showDigitalSurvey(this.onSuccess, this.onError);
     },
 
     resetState: function() {
         console.log('Reset the Verint SDK state');
-        cordova.plugins.VerintXM.resetState(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.resetState(this.onSuccess, this.onError);
     }
 };
 
