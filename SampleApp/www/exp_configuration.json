@@ -14,7 +14,12 @@
     ],
     "invite": {
         "logo": "exp_logo.png",
-        "baseColor": [237, 38, 54]
+        "baseColor": [43, 101, 242]
+    },
+    "survey": {
+        "closeButtonColor": [255, 255, 255],
+        "closeButtonBackgroundColor": [65, 65, 65],
+        "headerColor": [65, 65, 65]
     },
     "digital":{
         "digitalSurveys":[

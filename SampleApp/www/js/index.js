@@ -40,20 +40,20 @@ var app = {
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
-        cordova.plugins.ForeSeeAPI.setDebugLogEnabled("true", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.setDebugLogEnabled("true", this.onSuccess, this.onError);
 
         // Check eligibility on start to demonstrate showing an incomplete invite
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
 
         // Listeners
-        cordova.plugins.ForeSeeAPI.setInviteListener(function success(data) {}, function failure(error) {});
-        cordova.plugins.ForeSeeAPI.setDigitalListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setInviteListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setDigitalListener(function success(data) {}, function failure(error) {});
 
-        // Register Verint-ForeSee SDK for notification tap events
+        // Register Verint-Verint SDK for notification tap events
         if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
                 if (notification.EXPLocalNotificationMeasureKey != null) {
-                    cordova.plugins.ForeSeeAPI.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
+                    cordova.plugins.verint.xm.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
                 }
             }, this);  
         }
@@ -90,25 +90,25 @@ var app = {
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.ForeSeeAPI.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+        cordova.plugins.verint.xm.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
     },
 
     // show invite button click handler
     showInvite: function() {
         console.log("Show invite click");
-        cordova.plugins.ForeSeeAPI.showInvite("android_app_QA", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.showInvite("android_app_QA", this.onSuccess, this.onError);
     },
 
     // show digital survey button click handler
     showDigitalSurvey: function() {
         console.log("Show DigitalSurvey click");
-        cordova.plugins.ForeSeeAPI.showDigitalSurvey(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.showDigitalSurvey(this.onSuccess, this.onError);
     },
 
     resetState: function() {
-        console.log('Reset the ForeSee SDK state');
-        cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
+        console.log('Reset the Verint SDK state');
+        cordova.plugins.verint.xm.resetState(this.onSuccess, this.onError);
     }
 };
 

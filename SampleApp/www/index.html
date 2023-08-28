@@ -24,34 +24,35 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>ForeSee Cordova Sample</title>
+        <title>Verint Cordova Sample</title>
     </head>
     <body>
         <div class="app">
-            <div class="foresee-logo">
-                <img src="img/exp_logo.png" alt="ForeSee Logo" width="100px" height="100px">
+            <div class="verint-logo">
+                <img src="img/logo.png" alt="Verint Logo" width="200px" height="90px">
             </div>
             <div class="description">
                 <p>
-                    This example shows how to use checkEligibility, showInvite and resetState methods.
+                    This example shows how to use checkEligibility, showInvite, showDigitalSurvey and resetState methods.
                 </p>
                 <p>
                     Use checkEligibility to check if the user is eligible for a survey. 
                     If the user meets trigger criteria <b>and</b> is in the sampling pool, the invitation will be presented.
                 </p>
                 <p>
-                    Use resetState to reset the state of the tracker and (if applicable) reactivate the cxReplay module.
+                    Use resetState to reset the state of the tracker and (if applicable) reactivate the Predictive module.
                 </p>
                 <p>
                     Use showInvite to present (programmatically) the invitation for a given survey ID (sid).
                 </p>
+                <p>
+                    Use showDigitalSurvey to present (programmatically) the digital survey for a given digital survey ID (sid).
+                </p>
             </div>
-            <div class="btn-group-red">
+            <div class="btn-group-original">
                 <button id = "checkEligibility">Check Eligibility</button>
                 <button id = "showInvite">Show Invite</button>
-            </div>
-            <div class="btn-group-red">
-                <button id="showDigitalSurvey">Show Digital Survey</button>
+                <button id = "showDigitalSurvey">Show Digital Survey</button>
             </div>
             <div class="btn-group-white">
                 <button id = "resetState">Reset State</button>
