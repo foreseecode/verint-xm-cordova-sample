@@ -46,8 +46,9 @@ var app = {
         cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
 
         // Listeners
-        cordova.plugins.verint.xm.setInviteListener(function success(data) {}, function failure(error) {});
-        cordova.plugins.verint.xm.setDigitalListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setSDKListener(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.setInviteListener(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.setDigitalListener(this.onSuccess, this.onError);
 
         // Register Verint-Verint SDK for notification tap events
         if (device.platform == "iOS") {
