@@ -88,14 +88,16 @@ $ cordova plugin add <PATH_TO_REPO_DIR>/verint-xm-cordova-plugin --nofetch
 
 ### Running on an iOS Device
 
-In order to run on iOS, you'll need to select a valid development team
+In order to run on iOS, you'll need to select a valid development team, which you can set up using the `build.json` file in the root of the project.
 
-1. Open `platforms/ios/VerintXM.xcodeproj` in Xcode
-1. Select the `VerintXM` project in the project navigator
-1. Select a valid team in the `Signing` section
-1. Return to the command line and run iOS: 
-
-   `$ cordova run ios`
+1. Open **Keychain Manager**
+1. Right click your development certificate and select **Get info...**
+1. Copy the value in **Common name** 
+1. Paste it over the `codeSigningIdentity` in your `build.json`
+1. Open your provisioning profile and copy the UUID
+1. Paste it over the `provisioningProfile` in your `build.json`
+1. Add your development team ID into the `developmentTeam` in your `build.json`
+1. Run `$ cordova run ios`
 
 ## Example commands
 
@@ -114,10 +116,34 @@ Apache License, Version 2.0
 https://www.apache.org/licenses/LICENSE-2.0
 
 ## Known Issues
-### iOS
+### Minimum SDK version (iOS)
 There is currently an issue with the iOS minimum SDK version, which will be fixed, according to Cordova support:  
 https://issues.apache.org/jira/browse/CB-13597
 
-### Android
+#### Minimum SDK version (Android)
 There is currently an issue with the Android minimum SDK version, which will be fixed, according to the official Cordova blog:  
 http://disq.us/p/1oqjjtg
+
+### Issues running on simulator
+
+If you see one of the following error messages:
+
+```
+Error: Unhandled error. ('[ios-sim] Could not boot simulator 6075A271-091D-4BC8-86AA-58479762FC21\n')
+```
+or
+```
+Error: Unhandled error. ('[ios-sim] An error was encountered processing the command (domain=FBSOpenApplicationServiceErrorDomain, code=1):\n' +
+  'Simulator device returned an error for the requested operation.\n' +
+  'The request was denied by service delegate (SBMainWorkspace) for reason: Unspecified ("null").\n' +
+  'Underlying error (domain=FBSOpenApplicationServiceErrorDomain, code=1):\n' +
+  '\tThe request to open "com.verint.xm.cordova.sample" failed.\n' +
+  '\tThe request was denied by service delegate (SBMainWorkspace) for reason: Unspecified ("null").\n')
+```
+It's possible that Cordova is defaulting to a broken simulator instance. You can work around this issue by specifying a specific simulator to use, e.g.
+```
+cordova run ios --target "iPhone-14-Pro-Max" --emulator
+```
+You can get a list of all the available simulators by running `xcrun simctl list`.
+
+It's important to use the name from the `Device Types` list, which includes the hyphens. 

@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "debug": {
+      "codeSignIdentity": "Apple Development: ForeSee Developer",
+      "provisioningProfile": "eb562e5e-409c-4695-b4ea-73ec2ae20dff",
+      "developmentTeam": "Q7SXD2TU64",
+      "packageType": "development"
+    }
+  }
+}
