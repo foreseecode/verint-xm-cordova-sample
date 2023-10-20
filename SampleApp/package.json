@@ -16,6 +16,7 @@
   },
   "cordova": {
     "plugins": {
+      "cordova-plugin-verint-xm-sdk": {},
       "cordova-plugin-local-notification": {},
       "cordova-plugin-androidx-adapter": {},
       "cordova-plugin-android-permissions": {}
