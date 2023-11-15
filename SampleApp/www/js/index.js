@@ -35,7 +35,7 @@ var app = {
     // deviceready Event Handler
     onDeviceReady: function() {
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
-        document.getElementById("showInvite").addEventListener("click", this.showInvite);
+        document.getElementById("showInviteForName").addEventListener("click", this.showInviteForName);
         document.getElementById("showDigitalSurvey").addEventListener("click", this.showDigitalSurvey);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
@@ -90,14 +90,14 @@ var app = {
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.verint.xm.incrementSignificantEvent("instant_survey", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.incrementSignificantEvent("custom_event", this.onSuccess, this.onError);
         cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
     },
 
     // show invite button click handler
-    showInvite: function() {
-        console.log("Show invite click");
-        cordova.plugins.verint.xm.showInvite("android_app_QA", this.onSuccess, this.onError);
+    showInviteForName: function() {
+        console.log("Show invite for name click");
+        cordova.plugins.verint.xm.showInviteForName("SampleSurvey", this.onSuccess, this.onError);
     },
 
     // show digital survey button click handler
