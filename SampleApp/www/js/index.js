@@ -34,50 +34,81 @@ var app = {
 
     // deviceready Event Handler
     onDeviceReady: function() {
-        cordova.plugins.ForeSeeAPI.start(this.onSuccess);
         document.getElementById("checkEligibility").addEventListener("click", this.checkEligibility);
-        document.getElementById("showInvite").addEventListener("click", this.showInvite);
+        document.getElementById("showInviteForName").addEventListener("click", this.showInviteForName);
         document.getElementById("showDigitalSurvey").addEventListener("click", this.showDigitalSurvey);
         document.getElementById("resetState").addEventListener("click", this.resetState);
 
         // Enable debug logs
-        cordova.plugins.ForeSeeAPI.setDebugLogEnabled(["true"], this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.setDebugLogEnabled("true", this.onSuccess, this.onError);
 
         // Check eligibility on start to demonstrate showing an incomplete invite
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
 
-        // Register Verint-ForeSee SDK for notification tap events
+        // Listeners
+        cordova.plugins.verint.xm.setInviteListener(function success(data) {}, function failure(error) {});
+        cordova.plugins.verint.xm.setDigitalListener(function success(data) {}, function failure(error) {});
+
+        // Register Verint-Verint SDK for notification tap events
         if (device.platform == "iOS") {
             cordova.plugins.notification.local.on("click", function (notification) {
-                if (notification.FSLocalNotificationMeasureKey != null) {
-                    cordova.plugins.ForeSeeAPI.showSurvey([notification.FSLocalNotificationMeasureKey], this.onSuccess, this.onFailure);
+                if (notification.EXPLocalNotificationMeasureKey != null) {
+                    cordova.plugins.verint.xm.showSurvey(notification.EXPLocalNotificationMeasureKey, this.onSuccess, this.onFailure);
                 }
             }, this);  
+        }
+
+        // Request permissions for Android 33
+        if (device.platform == "Android") {
+            var permissions = cordova.plugins.permissions;
+
+            permissions.hasPermission(permissions.POST_NOTIFICATIONS, function (status) {
+                if (status.hasPermission) {
+                    // Permission has been granted previously, no need to request it again.
+                } else {
+                    var error = function () {
+                        // Permission has been denied.
+                        console.warn('permission has been denied');
+                    };
+
+                    var success = function (status) {
+                        if (!status.hasPermission) {
+                            // Permission has been denied.
+                            error();
+                        } else {
+                            console.warn('permission has been granted');
+                        }
+                    };
+
+                    // Request the permission to allow notifications.
+                    permissions.requestPermission(permissions.POST_NOTIFICATIONS, success, error);
+                }
+            })
         }
     },
 
     // checkEligibility button click handler
     checkEligibility: function() {
         console.log("Check if eligible for survey");
-        cordova.plugins.ForeSeeAPI.incrementSignificantEventCount(["instant_survey"], this.onSuccess, this.onError);
-        cordova.plugins.ForeSeeAPI.checkEligibility(this.onSuccess, this.onError);   
+        cordova.plugins.verint.xm.incrementSignificantEvent("custom_event", this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.checkEligibility(this.onSuccess, this.onError);
     },
 
     // show invite button click handler
-    showInvite: function() {
-        console.log("Show invite click");
-        cordova.plugins.ForeSeeAPI.showInvite(["android_app_QA"], this.onSuccess, this.onError);
+    showInviteForName: function() {
+        console.log("Show invite for name click");
+        cordova.plugins.verint.xm.showInviteForName("SampleSurvey", this.onSuccess, this.onError);
     },
 
     // show digital survey button click handler
     showDigitalSurvey: function() {
         console.log("Show DigitalSurvey click");
-        cordova.plugins.ForeSeeAPI.showDigitalSurvey(this.onSuccess, this.onError);
+        cordova.plugins.verint.xm.showDigitalSurvey(this.onSuccess, this.onError);
     },
 
     resetState: function() {
-        console.log('Reset the ForeSee SDK state');
-        cordova.plugins.ForeSeeAPI.resetState(this.onSuccess, this.onError);
+        console.log('Reset the Verint SDK state');
+        cordova.plugins.verint.xm.resetState(this.onSuccess, this.onError);
     }
 };
 
