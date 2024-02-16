@@ -22,10 +22,12 @@
       "cordova-plugin-verint-xm": {}
     },
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "devDependencies": {
+    "cordova-android": "^12.0.1",
     "cordova-ios": "^7.0.1",
     "cordova-plugin-android-permissions": "^1.1.5",
     "cordova-plugin-androidx-adapter": "^1.1.3",
