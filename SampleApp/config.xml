@@ -32,6 +32,6 @@
         <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
         <icon height="120" src="res/icon/ios/icon-120.png" width="120" />
         <icon height="57" src="res/icon/ios/icon-57.png" width="57" />
-        <preference name="deployment-target" value="12.0" />
+        <preference name="deployment-target" value="11.0" />
     </platform>
 </widget>
