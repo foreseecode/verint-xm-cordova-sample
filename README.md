@@ -3,6 +3,7 @@
 ## Prerequisites
 
 Clone this repo and change to the `SampleApp` directory:
+
 ```
 $ git clone https://github.com/foreseecode/verint-xm-cordova-sample
 $ cd verint-xm-cordova-sample/SampleApp/
@@ -78,6 +79,7 @@ $ cordova plugin add <PATH_TO_REPO_DIR>/verint-xm-cordova-plugin --nofetch
    `$ cordova prepare`
 
 1. The above commands will in most cases run `pod install` automatically, but if not (check their output), then the command can be run manually:
+
    ```
    cd platforms/ios
    pod install --repo-update
@@ -115,16 +117,20 @@ cordova.plugins.verint.xm.showInvite("android_app_QA", this.onSuccess, this.onEr
 cordova.plugins.verint.xm.resetState(this.onSuccess, this.onError);
 ```
 
-## License 
+## License
+
 Apache License, Version 2.0 
 https://www.apache.org/licenses/LICENSE-2.0
 
 ## Known Issues
+
 ### Minimum SDK version (iOS)
+
 There is currently an issue with the iOS minimum SDK version, which will be fixed, according to Cordova support:  
 https://issues.apache.org/jira/browse/CB-13597
 
-#### Minimum SDK version (Android)
+### Minimum SDK version (Android)
+
 There is currently an issue with the Android minimum SDK version, which will be fixed, according to the official Cordova blog:  
 http://disq.us/p/1oqjjtg
 
@@ -135,7 +141,9 @@ If you see one of the following error messages:
 ```
 Error: Unhandled error. ('[ios-sim] Could not boot simulator 6075A271-091D-4BC8-86AA-58479762FC21\n')
 ```
+
 or
+
 ```
 Error: Unhandled error. ('[ios-sim] An error was encountered processing the command (domain=FBSOpenApplicationServiceErrorDomain, code=1):\n' +
   'Simulator device returned an error for the requested operation.\n' +
@@ -144,10 +152,13 @@ Error: Unhandled error. ('[ios-sim] An error was encountered processing the comm
   '\tThe request to open "com.verint.xm.cordova.sample" failed.\n' +
   '\tThe request was denied by service delegate (SBMainWorkspace) for reason: Unspecified ("null").\n')
 ```
+
 It's possible that Cordova is defaulting to a broken simulator instance. You can work around this issue by specifying a specific simulator to use, e.g.
+
 ```
 cordova run ios --target "iPhone-14-Pro-Max" --emulator
 ```
+
 You can get a list of all the available simulators by running `xcrun simctl list`.
 
-It's important to use the name from the `Device Types` list, which includes the hyphens. 
+It's important to use the name from the `Device Types` list, which includes the hyphens.
